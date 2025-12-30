@@ -1,5 +1,5 @@
 plugins {
-    id("neotamia-build")
+    id("mvplugins-build")
 }
 
 extra["localJarRepo"] = true

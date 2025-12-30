@@ -12,7 +12,7 @@ plugins {
     id("com.diffplug.spotless")
 }
 
-group = "re.neotamia.kotlintemplate"
+group = "re.neotamia.mvplugins"
 version = findProperty("version")!!
 
 repositories {
@@ -134,9 +134,9 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             pom {
-                name = "KotlinTemplate ${project.name}"
-                description = "Kotlin Template, ${project.name} module."
-                url = "https://github.com/NeoTamia/kotlin-template"
+                name = "MVPlugins ${project.name}"
+                description = "MVPlugins, ${project.name} module."
+                url = "https://github.com/NeoTamia/MVPlugins"
                 developers {
                     developer {
                         id = "NeoTamia"
@@ -144,9 +144,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection = "scm:git:https://github.com/NeoTamia/kotlin-template.git"
-                    developerConnection = "scm:git:ssh://git@github.com:NeoTamia/kotlin-template.git"
-                    url = "https://github.com/NeoTamia/kotlin-template"
+                    connection = "scm:git:https://github.com/NeoTamia/MVPlugins.git"
+                    developerConnection = "scm:git:ssh://git@github.com:NeoTamia/MVPlugins.git"
+                    url = "https://github.com/NeoTamia/MVPlugins"
                 }
             }
             // javadoc & sources jars already added with `components["java"]`
