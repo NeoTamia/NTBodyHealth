@@ -17,7 +17,7 @@ plugins {
 }
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
-rootProject.name = "MVPlugins"
+rootProject.name = "NTBodyHealth"
 
 file("modules").listFiles()?.forEach { file ->
     if (file.isDirectory and !file.name.equals("build")) {

@@ -1,4 +1,4 @@
-package re.neotamia.mvplugins.core.body
+package re.neotamia.bodyhealth.core.body
 
 /**
  * Types of body locations for hit detection.

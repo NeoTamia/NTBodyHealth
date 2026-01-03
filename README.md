@@ -22,18 +22,18 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/NeoTamia/MVPlugins">
+  <a href="https://github.com/NeoTamia/NTBodyHealth">
     <img src="https://avatars.githubusercontent.com/u/210235009?s=200&v=4" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">MVPlugins</h3>
+<h3 align="center">NTBodyHealth</h3>
 
   <p align="center">
     A template for Kotlin projects. <br />
     <br />
-    <a href="https://github.com/NeoTamia/MVPlugins/issues">Report Bug</a>
+    <a href="https://github.com/NeoTamia/NTBodyHealth/issues">Report Bug</a>
     ·
-    <a href="https://github.com/NeoTamia/MVPlugins/issues">Request Feature</a>
+    <a href="https://github.com/NeoTamia/NTBodyHealth/issues">Request Feature</a>
   </p>
 </div>
 
@@ -103,8 +103,8 @@ Clone the project and build it.
 #### Clone & build
 
 ```sh
-git clone git@github.com:NeoTamia/MVPlugins.git
-cd MVPlugins
+git clone git@github.com:NeoTamia/NTBodyHealth.git
+cd NTBodyHealth
 ./gradlew build
 ```
 
@@ -166,16 +166,16 @@ Distributed under the MIT License. See [LICENSE][license-url] for more informati
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/NeoTamia/MVPlugins.svg?style=for-the-badge
-[contributors-url]: https://github.com/NeoTamia/MVPlugins/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/NeoTamia/MVPlugins.svg?style=for-the-badge
-[forks-url]: https://github.com/NeoTamia/MVPlugins/network/members
-[stars-shield]: https://img.shields.io/github/stars/NeoTamia/MVPlugins.svg?style=for-the-badge
-[stars-url]: https://github.com/NeoTamia/MVPlugins/stargazers
-[issues-shield]: https://img.shields.io/github/issues/NeoTamia/MVPlugins.svg?style=for-the-badge
-[issues-url]: https://github.com/NeoTamia/MVPlugins/issues
-[license-shield]: https://img.shields.io/github/license/NeoTamia/MVPlugins.svg?style=for-the-badge
-[license-url]: https://github.com/NeoTamia/MVPlugins/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/NeoTamia/NTBodyHealth.svg?style=for-the-badge
+[contributors-url]: https://github.com/NeoTamia/NTBodyHealth/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/NeoTamia/NTBodyHealth.svg?style=for-the-badge
+[forks-url]: https://github.com/NeoTamia/NTBodyHealth/network/members
+[stars-shield]: https://img.shields.io/github/stars/NeoTamia/NTBodyHealth.svg?style=for-the-badge
+[stars-url]: https://github.com/NeoTamia/NTBodyHealth/stargazers
+[issues-shield]: https://img.shields.io/github/issues/NeoTamia/NTBodyHealth.svg?style=for-the-badge
+[issues-url]: https://github.com/NeoTamia/NTBodyHealth/issues
+[license-shield]: https://img.shields.io/github/license/NeoTamia/NTBodyHealth.svg?style=for-the-badge
+[license-url]: https://github.com/NeoTamia/NTBodyHealth/blob/master/LICENSE
 [product-screenshot]: https://avatars.githubusercontent.com/u/116024069?s=200&v=4
 [contributing-url]: CONTRIBUTING.md
 

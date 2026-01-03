@@ -1,16 +1,14 @@
-package re.neotamia.mvplugins.core
+package re.neotamia.bodyhealth.core
 
-import org.bukkit.Server
 import org.bukkit.plugin.java.JavaPlugin
 import re.neotamia.config.NTConfig
-import re.neotamia.config.migration.ConfigMigrationManager
-import re.neotamia.mvplugins.core.body.config.Config
-import re.neotamia.mvplugins.core.listeners.PlayerListener
+import re.neotamia.bodyhealth.core.body.config.Config
+import re.neotamia.bodyhealth.core.listeners.PlayerListener
 import re.neotamia.nightconfig.core.serde.NamingStrategy
 import re.neotamia.nightconfig.yaml.YamlFormat
 
 
-class MVPlugins: JavaPlugin() {
+class BodyHealthPlugin: JavaPlugin() {
 
     val c: NTConfig = NTConfig();
 
@@ -19,6 +17,7 @@ class MVPlugins: JavaPlugin() {
     var config: Config = Config();
 
     override fun onEnable() {
+        if (!this.dataFolder.exists()) this.dataFolder.mkdirs();
 
         logger.info("Loading configuration...");
 

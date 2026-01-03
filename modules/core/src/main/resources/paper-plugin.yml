@@ -1,6 +1,6 @@
-name: "mvplugins"
+name: "NTBodyHealth"
 version: '1.0-SNAPSHOT'
-main: re.neotamia.mvplugins.core.MVPlugins
+main: re.neotamia.bodyhealth.core.BodyHealthPlugin
 api-version: '1.21'
 dependencies:
   server:

@@ -1,8 +1,8 @@
-package re.neotamia.mvplugins.core.body.config
+package re.neotamia.bodyhealth.core.body.config
 
 import re.neotamia.config.annotation.ConfigVersion
-import re.neotamia.mvplugins.core.body.BodyPart
-import re.neotamia.mvplugins.core.body.BodyPartType
+import re.neotamia.bodyhealth.core.body.BodyPart
+import re.neotamia.bodyhealth.core.body.BodyPartType
 import re.neotamia.nightconfig.core.serde.annotations.SerdeComment
 
 /**
@@ -28,7 +28,8 @@ Options:
         basicParts = listOf(
             BodyPart(BodyPartType.HEAD, 0.4),
             BodyPart(BodyPartType.CHEST, 0.4),
-            BodyPart(BodyPartType.LEGS, 0.2)
+            BodyPart(BodyPartType.LEGS, 0.2),
+            BodyPart(BodyPartType.FEET, 0.2)
         ),
         advancedParts = Parts(
             enabled = true,
@@ -47,8 +48,6 @@ Options:
         realisticParts = Parts(
             enabled = true,
             parts = listOf(
-                BodyPart(BodyPartType.EYES, 0.5),
-
                 BodyPart(BodyPartType.LEFT_SHOULDER, 0.3),
                 BodyPart(BodyPartType.RIGHT_SHOULDER, 0.3),
 

@@ -1,4 +1,4 @@
-package re.neotamia.mvplugins.core.body
+package re.neotamia.bodyhealth.core.body
 
 /**
  * Configuration levels for body parts.
@@ -9,5 +9,5 @@ package re.neotamia.mvplugins.core.body
 enum class PartConfiguration {
     BASIC,
     ADVANCED,
-    REALISTIC
+    REALISTIC;
 }

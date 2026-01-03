@@ -12,7 +12,7 @@ plugins {
     id("com.diffplug.spotless")
 }
 
-group = "re.neotamia.mvplugins"
+group = "re.neotamia.bodyhealth"
 version = findProperty("version")!!
 
 repositories {
@@ -134,9 +134,9 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             pom {
-                name = "MVPlugins ${project.name}"
-                description = "MVPlugins, ${project.name} module."
-                url = "https://github.com/NeoTamia/MVPlugins"
+                name = "NTBodyHealth ${project.name}"
+                description = "NTBodyHealth, ${project.name} module."
+                url = "https://github.com/NeoTamia/NTBodyHealth"
                 developers {
                     developer {
                         id = "NeoTamia"
@@ -144,9 +144,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection = "scm:git:https://github.com/NeoTamia/MVPlugins.git"
-                    developerConnection = "scm:git:ssh://git@github.com:NeoTamia/MVPlugins.git"
-                    url = "https://github.com/NeoTamia/MVPlugins"
+                    connection = "scm:git:https://github.com/NeoTamia/NTBodyHealth.git"
+                    developerConnection = "scm:git:ssh://git@github.com:NeoTamia/NTBodyHealth.git"
+                    url = "https://github.com/NeoTamia/NTBodyHealth"
                 }
             }
             // javadoc & sources jars already added with `components["java"]`

@@ -1,4 +1,4 @@
-package re.neotamia.mvplugins.core.body
+package re.neotamia.bodyhealth.core.body
 
 /**
  * Represents the health state of a body part.

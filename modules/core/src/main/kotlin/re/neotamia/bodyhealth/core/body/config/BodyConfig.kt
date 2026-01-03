@@ -1,6 +1,6 @@
-package re.neotamia.mvplugins.core.body.config
+package re.neotamia.bodyhealth.core.body.config
 
-import re.neotamia.mvplugins.core.body.BodyPart
+import re.neotamia.bodyhealth.core.body.BodyPart
 import re.neotamia.nightconfig.core.serde.annotations.SerdeComment
 
 /**

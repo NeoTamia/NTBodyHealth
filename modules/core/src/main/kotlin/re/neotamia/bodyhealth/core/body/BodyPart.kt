@@ -1,4 +1,4 @@
-package re.neotamia.mvplugins.core.body
+package re.neotamia.bodyhealth.core.body
 
 import re.neotamia.nightconfig.core.serde.annotations.SerdeKey
 import re.neotamia.nightconfig.core.serde.annotations.SerdeSkip

@@ -1,8 +1,7 @@
-package re.neotamia.mvplugins.core.listeners
+package re.neotamia.bodyhealth.core.listeners
 
 import org.bukkit.entity.ArmorStand
 import org.bukkit.entity.Arrow
-import org.bukkit.entity.Entity
 import org.bukkit.entity.LivingEntity
 import org.bukkit.entity.Mannequin
 import org.bukkit.entity.Player
@@ -11,11 +10,10 @@ import org.bukkit.event.Listener
 import org.bukkit.event.entity.EntityDamageByBlockEvent
 import org.bukkit.event.entity.EntityDamageByEntityEvent
 import org.bukkit.event.entity.EntityDamageEvent
-import org.bukkit.event.entity.ProjectileHitEvent
-import re.neotamia.mvplugins.core.MVPlugins
-import re.neotamia.mvplugins.core.body.BodyDetection
+import re.neotamia.bodyhealth.core.BodyHealthPlugin
+import re.neotamia.bodyhealth.core.body.BodyDetection
 
-class PlayerListener(val plugin: MVPlugins) : Listener {
+class PlayerListener(val plugin: BodyHealthPlugin) : Listener {
 
     val logger = plugin.logger;
 
