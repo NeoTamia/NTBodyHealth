@@ -1,0 +1,76 @@
+# Never change this value unless you know what you are doing
+version: '0.1'
+# 
+# Body type configuration.
+# Options:
+# - Basic: Head, Chest, Legs
+# - Advanced: Head, Shoulders, Arms, Hands, Chest, Thighs, Knees, Legs, Feet
+# - Realistic: Eyes, Left/Right for Shoulder, Arm, Hand, Torso, Thigh, Knee, Leg, Foot
+# 
+body-type:
+  # The sum of every basic-parts factors should be 1.0
+  basic-parts:
+    - type: HEAD
+      factor: 0.4
+    - type: CHEST
+      factor: 0.4
+    - type: LEGS
+      factor: 0.2
+  # Each advanced-parts factor is a multiplier applied to the corresponding basic-part
+  advanced-parts:
+    enabled: false
+    parts:
+      - type: SHOULDERS
+        factor: 0.5
+      - type: ARMS
+        factor: 0.5
+      - type: HANDS
+        factor: 0.3
+      - type: CHEST
+        factor: 0.5
+      - type: THIGHS
+        factor: 0.3
+      - type: KNEES
+        factor: 0.2
+      - type: LEGS
+        factor: 0.2
+      - type: FEET
+        factor: 0.2
+  # Each realistic-parts factor is a multiplier applied to the corresponding advanced-part
+  realistic-parts:
+    enabled: false
+    parts:
+      - type: EYES
+        factor: 0.5
+      - type: LEFT_SHOULDER
+        factor: 0.3
+      - type: RIGHT_SHOULDER
+        factor: 0.3
+      - type: LEFT_ARM
+        factor: 0.2
+      - type: RIGHT_ARM
+        factor: 0.2
+      - type: LEFT_HAND
+        factor: 0.1
+      - type: RIGHT_HAND
+        factor: 0.1
+      - type: TOP_TORSO
+        factor: 0.4
+      - type: BOTTOM_TORSO
+        factor: 0.4
+      - type: LEFT_THIGH
+        factor: 0.2
+      - type: RIGHT_THIGH
+        factor: 0.2
+      - type: LEFT_KNEE
+        factor: 0.1
+      - type: RIGHT_KNEE
+        factor: 0.1
+      - type: LEFT_LEG
+        factor: 0.1
+      - type: RIGHT_LEG
+        factor: 0.1
+      - type: LEFT_FOOT
+        factor: 0.1
+      - type: RIGHT_FOOT
+        factor: 0.1

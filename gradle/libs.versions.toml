@@ -7,6 +7,7 @@ kotlin = "2.3.0"
 shadow = "9.3.0"
 ktlint = "14.0.1"
 spotless = "8.1.0"
+ntconfig = "0.0.1"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -14,8 +15,11 @@ shadowGradlePlugin = { module = "com.gradleup.shadow:shadow-gradle-plugin", vers
 ktlintGradlePlugin = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlint" }
 spotlessGradlePlugin = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
 
-[bundles]
+ntConfigCore = { module = "re.neotamia.config:ntconfig-core", version.ref = "ntconfig" }
+ntConfigYaml = { module = "re.neotamia.config:ntconfig-yaml", version.ref = "ntconfig" }
 
+[bundles]
+ntConfig = ["ntConfigCore", "ntConfigYaml"]
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

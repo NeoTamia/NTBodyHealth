@@ -1,0 +1,8 @@
+name: "mvplugins"
+version: '1.0-SNAPSHOT'
+main: re.neotamia.mvplugins.core.MVPlugins
+api-version: '1.21'
+dependencies:
+  server:
+    MCKotlin-Paper:
+      required: true

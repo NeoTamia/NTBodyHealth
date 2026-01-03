@@ -37,7 +37,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly(kotlin("stdlib"))
+//    compileOnly(kotlin("stdlib"))
 
     testImplementation(kotlin("test"))
 }
