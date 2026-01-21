@@ -18,11 +18,10 @@ import kotlin.math.sin
  * @param config The body configuration settings.
  */
 class BodyDetection {
+    private val livingEntity: LivingEntity
 
-    private val livingEntity: LivingEntity;
-
-    private val config: Config;
-    private val logger: Logger;
+    private val config: Config
+    private val logger: Logger
 
     /**
      * Initializes a new instance of BodyDetection.
@@ -30,13 +29,13 @@ class BodyDetection {
      * @param plugin The plugin instance containing configuration and logger.
      */
     constructor(livingEntity: LivingEntity, plugin: BodyHealthPlugin) {
-        this.livingEntity = livingEntity;
-        this.config = plugin.config;
-        this.logger = plugin.logger;
-    };
+        this.livingEntity = livingEntity
+        this.config = plugin.config
+        this.logger = plugin.logger
+    }
 
-    private fun combineSides(lateral: LocationType, frontal: LocationType): LocationType {
-        return when {
+    private fun combineSides(lateral: LocationType, frontal: LocationType): LocationType =
+        when {
             // 1. Check for Corners (Both Lateral and Frontal are non-center)
             lateral == LocationType.LEFT && frontal == LocationType.FRONT -> LocationType.FRONT_LEFT
             lateral == LocationType.LEFT && frontal == LocationType.BACK -> LocationType.BACK_LEFT
@@ -54,7 +53,6 @@ class BodyDetection {
             // 5. Fallback to CENTER (should not happen)
             else -> LocationType.CENTER
         }
-    }
 
     /**
      * Detects which side of the body was hit based on the source location.
@@ -62,7 +60,7 @@ class BodyDetection {
      * @param source The location of the source that caused the hit.
      * @param isBody Whether to use body detection (true) or feet detection (false).
      * @return The type of body location that was hit.
-      */
+     */
     fun detectBodySide(source: Location, isBody: Boolean = true): LocationType {
         // 1. Get the direction vector from player to source
         val playerLoc = livingEntity.location
@@ -83,33 +81,35 @@ class BodyDetection {
 
         // 3. Define sensitivity based on a normalized scale (-1.0 to 1.0)
         // Instead of using width, we use a threshold (e.g., 0.3)
-        val threshold = if (isBody) 0.6 else 0.0;
+        val threshold = if (isBody) 0.6 else 0.0
 
-        var lateral = when {
-            localX < -threshold -> LocationType.RIGHT
-            localX > threshold -> LocationType.LEFT
-            else -> LocationType.CENTER
-        }
+        var lateral =
+            when {
+                localX < -threshold -> LocationType.RIGHT
+                localX > threshold -> LocationType.LEFT
+                else -> LocationType.CENTER
+            }
 
         if (!isBody) {
             lateral = if (localX >= 0) LocationType.LEFT else LocationType.RIGHT
         }
 
-        val frontal = when {
-            localZ < -threshold -> LocationType.BACK
-            localZ > threshold -> LocationType.FRONT
-            else -> LocationType.CENTER
-        }
+        val frontal =
+            when {
+                localZ < -threshold -> LocationType.BACK
+                localZ > threshold -> LocationType.FRONT
+                else -> LocationType.CENTER
+            }
 
         // 4. Combine (Logic remains the same)
-        return combineSides(lateral, frontal);
+        return combineSides(lateral, frontal)
     }
 
     fun basicDetection(source: Location): BodyPartType {
-        val sy = source.y;
-        val ly = livingEntity.location.y;
-        val isCrouch = livingEntity.isSneaking;
-        val totalHeight = livingEntity.height;
+        val sy = source.y
+        val ly = livingEntity.location.y
+        val isCrouch = livingEntity.isSneaking
+        val totalHeight = livingEntity.height
 
         return when {
             sy > ly + BodyPartType.HEAD.calculatePartHeight(totalHeight, isCrouch) -> BodyPartType.HEAD
@@ -121,14 +121,14 @@ class BodyDetection {
     }
 
     fun advancedDetection(source: Location): BodyPartType {
-        val sy = source.y;
-        val ly = livingEntity.location.y;
-        val isCrouch = livingEntity.isSneaking;
-        val totalHeight = livingEntity.height;
+        val sy = source.y
+        val ly = livingEntity.location.y
+        val isCrouch = livingEntity.isSneaking
+        val totalHeight = livingEntity.height
 
-        val side = detectBodySide(source);
+        val side = detectBodySide(source)
 
-        logger.info("Advanced detection side: $side");
+        logger.info("Advanced detection side: $side")
 
         return when {
             sy > ly + BodyPartType.HEAD.calculatePartHeight(totalHeight, isCrouch) -> BodyPartType.HEAD
@@ -145,16 +145,16 @@ class BodyDetection {
     }
 
     fun realisticDetection(source: Location): BodyPartType {
-        val sy = source.y;
-        val ly = livingEntity.location.y;
-        val totalHeight = livingEntity.height;
-        val isCrouch = livingEntity.isSneaking;
+        val sy = source.y
+        val ly = livingEntity.location.y
+        val totalHeight = livingEntity.height
+        val isCrouch = livingEntity.isSneaking
 
-        val bSide = detectBodySide(source);
-        val fSide = detectBodySide(source, false);
+        val bSide = detectBodySide(source)
+        val fSide = detectBodySide(source, false)
 
-        logger.info("Realistic detection body: $bSide");
-        logger.info("Realistic detection feet: $fSide");
+        logger.info("Realistic detection body: $bSide")
+        logger.info("Realistic detection feet: $fSide")
 
         return when {
             sy > ly + BodyPartType.HEAD.calculatePartHeight(totalHeight, isCrouch) -> BodyPartType.HEAD
@@ -193,32 +193,32 @@ class BodyDetection {
      * @param source The entity that caused the hit.
      * @return The type of body part that was hit.
      */
-    fun detectHitBodyPart(source: Location) : BodyPartType {
+    fun detectHitBodyPart(source: Location): BodyPartType {
         logger.info("---------------------------------")
-        logger.info("Player ${livingEntity.name} (${livingEntity.uniqueId})");
-        logger.info("Width: ${livingEntity.width} | Height: ${livingEntity.height}");
+        logger.info("Player ${livingEntity.name} (${livingEntity.uniqueId})")
+        logger.info("Width: ${livingEntity.width} | Height: ${livingEntity.height}")
         logger.info("---------------------------------")
         logger.info("Source (${source.x}, ${source.y}, ${source.z})")
         logger.info("---------------------------------")
 
         livingEntity.world.spawn(source, Interaction::class.java) {
-            it.interactionHeight = 0.1f;
-            it.interactionWidth = 0.1f;
-            it.isResponsive = false;
+            it.interactionHeight = 0.1f
+            it.interactionWidth = 0.1f
+            it.isResponsive = false
         }
 
-        var part: BodyPartType;
+        var part: BodyPartType
 
         if (config.body.realisticParts.enabled) {
-            part = realisticDetection(source);
-            logger.info("Realistic detection: Hit body part = ${part.name}");
+            part = realisticDetection(source)
+            logger.info("Realistic detection: Hit body part = ${part.name}")
         } else if (config.body.advancedParts.enabled) {
-            part = advancedDetection(source);
-            logger.info("Advanced detection: Hit body part = ${part.name}");
+            part = advancedDetection(source)
+            logger.info("Advanced detection: Hit body part = ${part.name}")
         } else {
-            part = basicDetection(source);
-            logger.info("Basic detection: Hit body part = ${part.name}");
+            part = basicDetection(source)
+            logger.info("Basic detection: Hit body part = ${part.name}")
         }
-        return part;
+        return part
     }
 }

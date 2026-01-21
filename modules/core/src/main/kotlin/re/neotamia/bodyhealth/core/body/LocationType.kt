@@ -18,35 +18,25 @@ enum class LocationType {
     /**
      * Checks if the location is on the left side.
      */
-    fun isLeft(): Boolean {
-        return this == LEFT || this == FRONT_LEFT || this == BACK_LEFT;
-    }
+    fun isLeft(): Boolean = this == LEFT || this == FRONT_LEFT || this == BACK_LEFT
 
     /**
      * Checks if the location is on the right side.
      */
-    fun isRight(): Boolean {
-        return this == RIGHT || this == FRONT_RIGHT || this == BACK_RIGHT;
-    }
+    fun isRight(): Boolean = this == RIGHT || this == FRONT_RIGHT || this == BACK_RIGHT
 
     /**
      * Checks if the location is facing front or back.
      */
-    fun isFacing(): Boolean {
-        return this == FRONT || this == BACK;
-    }
+    fun isFacing(): Boolean = this == FRONT || this == BACK
 
     /**
      * Checks if the location is on the front side.
      */
-    fun isFront(): Boolean {
-        return this == FRONT || this == FRONT_LEFT || this == FRONT_RIGHT;
-    }
+    fun isFront(): Boolean = this == FRONT || this == FRONT_LEFT || this == FRONT_RIGHT
 
     /**
      * Checks if the location is on the back side.
      */
-    fun isBack(): Boolean {
-        return this == BACK || this == BACK_LEFT || this == BACK_RIGHT;
-    }
+    fun isBack(): Boolean = this == BACK || this == BACK_LEFT || this == BACK_RIGHT
 }

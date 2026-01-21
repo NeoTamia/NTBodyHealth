@@ -9,5 +9,5 @@ package re.neotamia.bodyhealth.core.body
 enum class PartConfiguration {
     BASIC,
     ADVANCED,
-    REALISTIC;
+    REALISTIC
 }

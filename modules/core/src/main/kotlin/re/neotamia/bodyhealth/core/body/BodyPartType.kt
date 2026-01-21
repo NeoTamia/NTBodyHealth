@@ -7,7 +7,9 @@ import re.neotamia.bodyhealth.core.body.config.Config
  * Each body part type is linked to a specific PartConfiguration level.
  * @property config The configuration level associated with the body part type.
  */
-enum class BodyPartType(val config: PartConfiguration) {
+enum class BodyPartType(
+    val config: PartConfiguration
+) {
     HEAD(PartConfiguration.BASIC), // Basic
 
     SHOULDERS(PartConfiguration.ADVANCED), // Advanced
@@ -44,30 +46,31 @@ enum class BodyPartType(val config: PartConfiguration) {
 
     UNKNOWN(PartConfiguration.BASIC);
 
-    fun calculatePartHeight(totalHeight: Double, isCrouch: Boolean): Double {
-        return when (this) {
-            HEAD -> if (!isCrouch) totalHeight * 0.7727230538 else 0.0;
-            SHOULDERS, LEFT_SHOULDER, RIGHT_SHOULDER -> if (!isCrouch) totalHeight * 0.714370381 else 0.0;
-            TOP_TORSO -> if (!isCrouch) totalHeight * 0.5581918394 else 0.0;
-            ARMS, LEFT_ARM, RIGHT_ARM -> if (!isCrouch) totalHeight * 0.4805437296 else 0.0;
-            HANDS, LEFT_HAND, RIGHT_HAND -> if (!isCrouch) totalHeight * 0.3846965965 else 0.0;
-            CHEST, BOTTOM_TORSO -> if (!isCrouch) totalHeight * 0.3846965965 else 0.0;
-            THIGHS, LEFT_THIGH, RIGHT_THIGH -> if (!isCrouch) totalHeight * 0.2353702323 else 0.0;
-            KNEES, LEFT_KNEE, RIGHT_KNEE -> if (!isCrouch) totalHeight * 0.2093453735 else 0.0;
-            LEGS, LEFT_LEG, RIGHT_LEG -> if (!isCrouch) totalHeight * 0.1201870994 else 0.0;
-            FEET, LEFT_FOOT, RIGHT_FOOT -> 0.0;
+    fun calculatePartHeight(totalHeight: Double, isCrouch: Boolean): Double =
+        when (this) {
+            HEAD -> if (!isCrouch) totalHeight * 0.7727230538 else 0.0
+            SHOULDERS, LEFT_SHOULDER, RIGHT_SHOULDER -> if (!isCrouch) totalHeight * 0.714370381 else 0.0
+            TOP_TORSO -> if (!isCrouch) totalHeight * 0.5581918394 else 0.0
+            ARMS, LEFT_ARM, RIGHT_ARM -> if (!isCrouch) totalHeight * 0.4805437296 else 0.0
+            HANDS, LEFT_HAND, RIGHT_HAND -> if (!isCrouch) totalHeight * 0.3846965965 else 0.0
+            CHEST, BOTTOM_TORSO -> if (!isCrouch) totalHeight * 0.3846965965 else 0.0
+            THIGHS, LEFT_THIGH, RIGHT_THIGH -> if (!isCrouch) totalHeight * 0.2353702323 else 0.0
+            KNEES, LEFT_KNEE, RIGHT_KNEE -> if (!isCrouch) totalHeight * 0.2093453735 else 0.0
+            LEGS, LEFT_LEG, RIGHT_LEG -> if (!isCrouch) totalHeight * 0.1201870994 else 0.0
+            FEET, LEFT_FOOT, RIGHT_FOOT -> 0.0
             else -> 0.0
         }
-    }
 
-    fun isEnabledInConfig(config: Config): Boolean {
-        return when (this.config) {
+    fun isEnabledInConfig(config: Config): Boolean =
+        when (this.config) {
             PartConfiguration.BASIC -> config.body.basicParts.any { it.type == this }
-            PartConfiguration.ADVANCED -> config.body.advancedParts.enabled &&
-                    config.body.advancedParts.parts.any { it.type == this }
-            PartConfiguration.REALISTIC -> config.body.realisticParts.enabled &&
-                    config.body.realisticParts.parts.any { it.type == this }
+            PartConfiguration.ADVANCED ->
+                config.body.advancedParts.enabled &&
+                    config.body.advancedParts.parts
+                        .any { it.type == this }
+            PartConfiguration.REALISTIC ->
+                config.body.realisticParts.enabled &&
+                    config.body.realisticParts.parts
+                        .any { it.type == this }
         }
-    }
-
 }

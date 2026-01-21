@@ -17,13 +17,13 @@ data class BodyPart(
     val maxHealth: Double = 100.0
 ) {
     @SerdeSkip
-    private var currentHealth: Double;
+    private var currentHealth: Double
 
     /**
      * Initializes the body part with full health.
      */
     init {
-        currentHealth = maxHealth;
+        currentHealth = maxHealth
     }
 
     /**
@@ -32,7 +32,7 @@ data class BodyPart(
      * @return The actual amount of healing applied.
      */
     fun applyHealing(healingAmount: Double): Double {
-        currentHealth = (currentHealth + healingAmount).coerceAtMost(maxHealth);
+        currentHealth = (currentHealth + healingAmount).coerceAtMost(maxHealth)
         return healingAmount
     }
 
@@ -42,8 +42,8 @@ data class BodyPart(
      * @return The actual damage applied after considering the damage factor.
      */
     fun applyDamage(rawDamage: Double): Double {
-        val actualDamage = rawDamage * damageFactor;
-        currentHealth = (currentHealth - actualDamage).coerceAtLeast(0.0);
+        val actualDamage = rawDamage * damageFactor
+        currentHealth = (currentHealth - actualDamage).coerceAtLeast(0.0)
         return actualDamage
     }
 
@@ -73,6 +73,4 @@ data class BodyPart(
             else -> PartState.BROKEN
         }
     }
-
 }
-
