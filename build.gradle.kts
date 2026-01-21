@@ -44,4 +44,3 @@ bukkitPluginYaml {
     apiVersion = "1.21"
     version = project.version.toString()
 }
-
