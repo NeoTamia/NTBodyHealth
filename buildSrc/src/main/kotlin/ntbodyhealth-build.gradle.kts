@@ -34,6 +34,10 @@ repositories {
         name = "neotamiaPrivate"
         url = uri("https://repo.neotamia.re/private")
     }
+    maven {
+        name = "papermc-repo"
+        url = uri("https://repo.papermc.io/repository/maven-public/")
+    }
 }
 
 dependencies {
@@ -66,6 +70,8 @@ spotless {
 
     kotlin {
         toggleOffOn()
+        targetExclude("**/src/test/**")
+
         ktlint()
     }
 

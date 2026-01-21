@@ -5,14 +5,17 @@
 [versions]
 kotlin = "2.3.0"
 shadow = "9.3.0"
-ktlint = "14.0.1"
 spotless = "8.1.0"
+paperweight = "2.0.0-beta.19"
+runPaper = "3.0.2"
+resourceFactory = "1.3.1"
+
+# project librairies
 ntconfig = "0.0.1"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
 shadowGradlePlugin = { module = "com.gradleup.shadow:shadow-gradle-plugin", version.ref = "shadow" }
-ktlintGradlePlugin = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlint" }
 spotlessGradlePlugin = { module = "com.diffplug.spotless:spotless-plugin-gradle", version.ref = "spotless" }
 
 ntConfigCore = { module = "re.neotamia.config:ntconfig-core", version.ref = "ntconfig" }
@@ -23,3 +26,7 @@ ntConfig = ["ntConfigCore", "ntConfigYaml"]
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+paperweight = { id = "io.papermc.paperweight.userdev", version.ref = "paperweight" }
+runPaper = { id = "xyz.jpenilla.run-paper", version.ref = "runPaper" }
+resourceFactoryBukkit = { id = "xyz.jpenilla.resource-factory-bukkit-convention", version.ref = "resourceFactory" }
+resourceFactoryPaper = { id = "xyz.jpenilla.resource-factory-paper-convention", version.ref = "resourceFactory" }
