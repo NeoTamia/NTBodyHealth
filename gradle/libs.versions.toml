@@ -11,7 +11,7 @@ runPaper = "3.0.2"
 resourceFactory = "1.3.1"
 
 # project librairies
-ntconfig = "0.0.1"
+ntconfig = "0.1.1"
 
 [libraries]
 kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
