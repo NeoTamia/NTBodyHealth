@@ -4,7 +4,7 @@
 
 [versions]
 kotlin = "2.3.0"
-shadow = "9.3.0"
+shadow = "9.4.1"
 spotless = "8.1.0"
 paperweight = "2.0.0-beta.19"
 runPaper = "3.0.2"
