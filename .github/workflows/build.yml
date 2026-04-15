@@ -39,7 +39,7 @@ concurrency:
 jobs:
   build-and-publish:
     name: Build and Publish
-    uses: NeoTamia/actions/.github/workflows/jvm-build-and-publish.yml@main
+    uses: NeoTamia/actions/.github/workflows/jvm-build-and-publish.yml@da0f4095741fc1138ecdf68cc9efa6be0e6ab59c # main
     with:
       build-command: './gradlew build "-Pspotless.enforceCheck=false"'
       release: ${{ startsWith(github.ref, 'refs/tags/v') || github.event.inputs.release == 'true' }}

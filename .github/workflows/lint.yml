@@ -32,7 +32,7 @@ concurrency:
 jobs:
   lint:
     name: Linting
-    uses: NeoTamia/actions/.github/workflows/jvm-lint.yml@main
+    uses: NeoTamia/actions/.github/workflows/jvm-lint.yml@da0f4095741fc1138ecdf68cc9efa6be0e6ab59c # main
     permissions:
       contents: read
       issues: write
